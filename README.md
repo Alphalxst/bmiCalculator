@@ -1,2 +1,2 @@
 # bmiCalculator
-simple BMI Calculator  with a web gui written in go with an AWS backend
+Simple BMI Calculator  with a web gui written in go with an AWS backend
