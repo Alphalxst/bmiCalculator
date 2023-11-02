@@ -9,6 +9,20 @@ tasks:
       - task: run
     silent: true
 
+  build:
+    desc: builds .go files and puts the binary in a build folder
+    deps:
+      - build:main
+    cmds:
+      - echo Build Complete!
+ 
+
+  build:main:
+    desc: builds main.go and puts the binary in a build folder
+    cmds:
+      - echo building main.go...
+      - go build -v -o ./builds/ cmd/bmiCalculator/main.go
+
   run:
     desc: runs main.go
     cmds:
@@ -19,5 +33,5 @@ tasks:
   deletebuilds:
     desc: deletes built binaries from build folder
     cmds:
-      - rm -r ./builds
+      - rm -r ./builds/
       - echo Builds folder deleted!
