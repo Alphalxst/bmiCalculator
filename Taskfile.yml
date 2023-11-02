@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  default:
+    cmds:
+      - task: run
+    silent: true
+
+  run:
+    desc: runs main.go
+    cmds:
+      - echo Running main.go
+      - go run cmd/bmiCalculator/main.go
+    silent: true 
+  
+  deletebuilds:
+    desc: deletes built binaries from build folder
+    cmds:
+      - rm -r ./builds
+      - echo Builds folder deleted!
