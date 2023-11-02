@@ -1,7 +1,7 @@
 package main
 
 import (
-	printer "bmiCalculator/internal"
+	printer "bmiCalculator/internal/app"
 )
 
 func main() {
