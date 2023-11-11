@@ -1,10 +1,10 @@
 package main
 
 import (
-	printer "bmiCalculator/internal/app"
+	BMI "bmiCalculator/internal/BMI"
 )
 
 func main() {
-
-	printer.Printer()
+	//executes function that runs integral logic
+	BMI.MainProcess()
 }

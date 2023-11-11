@@ -29,6 +29,13 @@ tasks:
       - echo Running main.go
       - go run cmd/bmiCalculator/main.go
     silent: true 
+
+  runbuild:
+    desc: runs main.go
+    cmds:
+      - echo Running main.go
+      - go run bmiCalculator/builds/main
+    silent: true 
   
   deletebuilds:
     desc: deletes built binaries from build folder
