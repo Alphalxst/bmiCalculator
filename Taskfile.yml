@@ -31,10 +31,10 @@ tasks:
     silent: true 
 
   runbuild:
-    desc: runs main.go
+    desc: runs build of program
     cmds:
       - echo Running main.go
-      - go run bmiCalculator/builds/main
+      - go run ./main
     silent: true 
   
   deletebuilds:

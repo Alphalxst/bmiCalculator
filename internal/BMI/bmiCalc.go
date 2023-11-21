@@ -5,6 +5,9 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
+
+	"github.com/fatih/color"
 )
 
 type Person struct {
@@ -17,7 +20,6 @@ func MainProcess() {
 	//controls the operation of getting the input from the users, calculating the BMI then printing it
 	fmt.Println("BMI Calc started!")
 	newPerson := getInput()
-	fmt.Println(newPerson)
 
 	bmi := getBmi(newPerson)
 	fmt.Println(newPerson.name, "has a BMI of", bmi)
@@ -25,21 +27,26 @@ func MainProcess() {
 
 func getInput() Person {
 	//Get input from the user
+	color.Set(color.FgGreen)
 	fmt.Println("\n--------------------------\n----- BMI CALCULATOR -----\n--------------------------")
+	color.Unset()
 
 	reader := bufio.NewReader(os.Stdin)
 	newUser := Person{}
 
+	color.Set(color.FgYellow)
 	fmt.Println("\nPlease enter your name:")
-	newUser.name, _ = reader.ReadString('\n')
+	name, _ := reader.ReadString('\n')
+	newUser.name = strings.TrimSpace(name)
 
-	fmt.Println("\nPlease enter your weight:")
+	fmt.Println("\nPlease enter your weight(kg):")
 	weight, _ := reader.ReadString('\n')
-	newUser.weight, _ = strconv.ParseFloat(weight, 64)
+	newUser.weight, _ = strconv.ParseFloat(strings.TrimSpace(weight), 64)
 
-	fmt.Println("\nPlease enter your height:")
+	fmt.Println("\nPlease enter your height(m):")
 	height, _ := reader.ReadString('\n')
-	newUser.height, _ = strconv.ParseFloat(height, 64)
+	newUser.height, _ = strconv.ParseFloat(strings.TrimSpace(height), 64)
+	color.Unset()
 
 	return newUser
 }
