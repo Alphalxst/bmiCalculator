@@ -34,10 +34,11 @@ tasks:
     desc: runs build of program
     cmds:
       - echo Running main.go
-      - go run ./main
+      - chmod +x ./builds/main
+      - go run ./builds/main
     silent: true 
   
-  deletebuilds:
+  deletebuild:
     desc: deletes built binaries from build folder
     cmds:
       - rm -r ./builds/

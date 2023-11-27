@@ -6,5 +6,5 @@ import (
 
 func main() {
 	//executes function that runs integral logic
-	BMI.MainProcess()
+	BMI.Menu()
 }
